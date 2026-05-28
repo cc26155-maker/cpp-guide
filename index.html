@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CP Academy</title>
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#0F172A;
+            color:#E2E8F0;
+            font-family:Arial, Helvetica, sans-serif;
+            overflow-x:hidden;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .navbar{
+            width:100%;
+            height:70px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            padding:0 80px;
+
+            border-bottom:1px solid #1E293B;
+
+            position:sticky;
+            top:0;
+
+            background:#0F172Aee;
+            backdrop-filter:blur(10px);
+
+            z-index:1000;
+        }
+
+        .logo{
+            font-size:1.5rem;
+            font-weight:700;
+            color:#38BDF8;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:40px;
+        }
+
+        .nav-links a{
+            transition:0.2s;
+            color:#CBD5E1;
+        }
+
+        .nav-links a:hover{
+            color:#38BDF8;
+        }
+
+        .hero{
+            width:100%;
+            min-height:90vh;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            padding:80px;
+        }
+
+        .hero-content{
+            max-width:1200px;
+            width:100%;
+
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:60px;
+            align-items:center;
+        }
+
+        .hero-text h1{
+            font-size:4rem;
+            line-height:1.1;
+            margin-bottom:30px;
+        }
+
+        .hero-text span{
+            color:#38BDF8;
+        }
+
+        .hero-text p{
+            color:#94A3B8;
+            font-size:1.2rem;
+            line-height:1.8;
+            margin-bottom:40px;
+        }
+
+        .buttons{
+            display:flex;
+            gap:20px;
+        }
+
+        .primary-btn{
+            background:#38BDF8;
+            color:#0F172A;
+
+            padding:16px 28px;
+
+            border-radius:12px;
+
+            font-weight:700;
+
+            transition:0.2s;
+        }
+
+        .primary-btn:hover{
+            transform:translateY(-2px);
+        }
+
+        .secondary-btn{
+            border:1px solid #334155;
+
+            padding:16px 28px;
+
+            border-radius:12px;
+
+            transition:0.2s;
+        }
+
+        .secondary-btn:hover{
+            border-color:#38BDF8;
+            color:#38BDF8;
+        }
+
+        .hero-card{
+            background:#1E293B;
+
+            border:1px solid #334155;
+
+            border-radius:24px;
+
+            padding:30px;
+
+            box-shadow:0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .editor-top{
+            display:flex;
+            gap:10px;
+            margin-bottom:25px;
+        }
+
+        .dot{
+            width:12px;
+            height:12px;
+            border-radius:50%;
+        }
+
+        .red{
+            background:#EF4444;
+        }
+
+        .yellow{
+            background:#F59E0B;
+        }
+
+        .green{
+            background:#22C55E;
+        }
+
+        .code{
+            font-family:monospace;
+            line-height:2;
+            color:#E2E8F0;
+        }
+
+        .blue{
+            color:#38BDF8;
+        }
+
+        .green-text{
+            color:#22C55E;
+        }
+
+        .purple{
+            color:#A78BFA;
+        }
+
+        .section{
+            padding:120px 80px;
+        }
+
+        .section-title{
+            font-size:2.5rem;
+            margin-bottom:20px;
+        }
+
+        .section-subtitle{
+            color:#94A3B8;
+            margin-bottom:60px;
+            max-width:700px;
+            line-height:1.8;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:#1E293B;
+
+            border:1px solid #334155;
+
+            border-radius:20px;
+
+            padding:30px;
+
+            transition:0.2s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            border-color:#38BDF8;
+        }
+
+        .card h3{
+            margin-bottom:20px;
+            font-size:1.3rem;
+        }
+
+        .card p{
+            color:#94A3B8;
+            line-height:1.7;
+        }
+
+        .roadmap{
+            display:flex;
+            flex-direction:column;
+            gap:25px;
+
+            margin-top:50px;
+        }
+
+        .roadmap-item{
+            background:#1E293B;
+
+            border-left:5px solid #38BDF8;
+
+            padding:25px;
+
+            border-radius:16px;
+        }
+
+        .roadmap-item h4{
+            margin-bottom:10px;
+            font-size:1.2rem;
+        }
+
+        .roadmap-item p{
+            color:#94A3B8;
+        }
+
+        footer{
+            border-top:1px solid #1E293B;
+
+            padding:40px 80px;
+
+            color:#64748B;
+
+            text-align:center;
+        }
+
+        @media(max-width:900px){
+
+            .navbar{
+                padding:0 25px;
+            }
+
+            .hero{
+                padding:40px 25px;
+            }
+
+            .hero-content{
+                grid-template-columns:1fr;
+            }
+
+            .hero-text h1{
+                font-size:2.8rem;
+            }
+
+            .section{
+                padding:80px 25px;
+            }
+
+            .buttons{
+                flex-direction:column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CP Academy
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Roadmap</a>
+            <a href="#">Artigos</a>
+            <a href="#">Problemas</a>
+            <a href="#">Grafos</a>
+        </div>
+
+    </nav>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Aprenda <span>Programação Competitiva</span> do básico ao avançado
+                </h1>
+
+                <p>
+                    Estruturas de dados, algoritmos, matemática, grafos, programação dinâmica
+                    e tudo necessário para olimpíadas de programação e competições.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="primary-btn" href="#">
+                        Começar Roadmap
+                    </a>
+
+                    <a class="secondary-btn" href="#">
+                        Explorar Artigos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="editor-top">
+
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+
+                </div>
+
+                <div class="code">
+
+<span class="blue">#include</span> &lt;bits/stdc++.h&gt;<br>
+<span class="blue">using namespace</span> std;<br><br>
+
+<span class="blue">int</span> main(){<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;vector&lt;<span class="blue">int</span>&gt; v;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">for</span>(<span class="blue">int</span> i = 0; i &lt; n; i++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;sort(v.begin(), v.end());<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; <span class="green-text">"Competitive Programming"</span>;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> 0;<br>
+}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            O que você vai aprender
+        </h2>
+
+        <p class="section-subtitle">
+            Conteúdo estruturado para desenvolver lógica, velocidade e domínio dos algoritmos mais usados em competições.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>STL</h3>
+
+                <p>
+                    vector, set, map, queue, stack, priority_queue e técnicas essenciais para resolver problemas rapidamente.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Grafos</h3>
+
+                <p>
+                    BFS, DFS, Dijkstra, Union Find, árvore, caminhos mínimos e algoritmos avançados.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Programação Dinâmica</h3>
+
+                <p>
+                    Aprenda memoization, knapsack, LIS, otimizações e técnicas clássicas de DP.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Matemática</h3>
+
+                <p>
+                    Primos, combinatória, modular arithmetic, exponenciação rápida e teoria dos números.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Roadmap
+        </h2>
+
+        <p class="section-subtitle">
+            Evolua passo a passo até dominar os tópicos mais importantes das competições.
+        </p>
+
+        <div class="roadmap">
+
+            <div class="roadmap-item">
+                <h4>1. Fundamentos de C++</h4>
+                <p>Input/output, loops, funções, vetores e complexidade.</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h4>2. STL</h4>
+                <p>Estruturas essenciais da biblioteca padrão.</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h4>3. Algoritmos</h4>
+                <p>Busca binária, two pointers, prefix sum e greedy.</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h4>4. Grafos</h4>
+                <p>DFS, BFS, shortest path e estruturas de árvores.</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h4>5. Programação Dinâmica</h4>
+                <p>Estados, transições e otimizações clássicas.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        CP Academy © 2026
+    </footer>
+
+</body>
+</html>
