@@ -3,163 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/global.css">
+
+
     <title>CPP Core</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            background:#ffffff;
-            color:#111827;
-            font-family:'Inter', sans-serif;
-            line-height:1.7;
-        }
-
-        a{
-            text-decoration:none;
-            color:inherit;
-        }
-
-        .container{
-            width:100%;
-            max-width:1250px;
-            margin:auto;
-            padding:0 24px;
-        }
-
-        header{
-            border-bottom:1px solid #e5e7eb;
-            background:white;
-        }
-
-        .navbar{
-            height:70px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-        }
-
-        .logo{
-            font-size:1.3rem;
-            font-weight:700;
-        }
-
-        .logo span{
-            color:#2563eb;
-        }
-
-        .nav-links{
-            display:flex;
-            gap:28px;
-            color:#4b5563;
-            font-size:0.95rem;
-            flex-wrap:wrap;
-            justify-content:center;
-        }
-
-        .nav-links a:hover{
-            color:#2563eb;
-        }
-
-        .hero{
-            padding:40px 0 50px 0;
-        }
-
-        .hero h1{
-            font-size:2.8rem;
-            line-height:1.1;
-            max-width:750px;
-            margin-bottom:24px;
-        }
-
-        .hero p{
-            max-width:720px;
-            color:#4b5563;
-            font-size:1.1rem;
-            margin-bottom:20px;
-        }
-
-        .search{
-            width:100%;
-            max-width:420px;
-            padding:12px 16px;
-            border:1px solid #d1d5db;
-            border-radius:6px;
-            font-size:0.95rem;
-            background:#ffffff;
-            color:#111827;
-        }
-
-        .section{
-            padding:70px 0;
-        }
-
-        .section-title{
-            font-size:2rem;
-            margin-bottom:12px;
-        }
-
-        .section-subtitle{
-            color:#6b7280;
-            margin-bottom:36px;
-        }
-
-        .topics{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-            gap:20px;
-        }
-
-        .topic-card{
-            border:1px solid #e5e7eb;
-            border-radius:6px;
-            padding:24px;
-            transition:0.2s;
-        }
-
-        .topic-card:hover{
-            border-color:#2563eb;
-            background:#f8fafc;
-        }
-
-        .topic-card h3{
-            margin-bottom:12px;
-            font-size:1.1rem;
-        }
-
-        .topic-card p{
-            color:#6b7280;
-            font-size:0.95rem;
-        }
-
-        footer{
-            border-top:1px solid #e5e7eb;
-            margin-top:70px;
-            padding:30px 0;
-            color:#6b7280;
-            font-size:0.95rem;
-        }
-
-        @media(max-width:800px){
-            .navbar{
-                flex-direction:column;
-                height:auto;
-                padding:20px 0;
-                gap:16px;
-            }
-
-            .hero h1{
-                font-size:2.5rem;
-            }
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -170,11 +23,11 @@
             </div>
 
             <nav class="nav-links">
-                <a href="#">Tópicos</a>
-                <a href="#">Problemas</a>
-                <a href="#">Roteiro de estudos</a>
-                <a href="#">Referências</a>
-                <a href="#">Templates</a>
+                <a href="pages/topics.html">Tópicos</a>
+                <a href="pages/problems.html">Problemas</a>
+                <a href="pages/study-roadmap.html">Roteiro de estudos</a>
+                <a href="pages/references.html">Referências</a>
+                <a href="pages/templates.html">Templates</a>
             </nav>
         </div>
     </header>
@@ -191,7 +44,8 @@
                     matemática e técnicas usadas em programação competitiva.
                 </p>
 
-                <input class="search" type="text" placeholder="Buscar tópico...">
+                <input class="search" id="searchInput" type="text" placeholder="Buscar tópico...">
+                
             </div>
         </section>
 
@@ -205,35 +59,7 @@
                     Principais áreas da programação competitiva.
                 </p>
 
-                <div class="topics">
-                    <div class="topic-card">
-                        <h3>STL</h3>
-                        <p>
-                            vector, set, map, queue, stack e estruturas essenciais.
-                        </p>
-                    </div>
-
-                    <div class="topic-card">
-                        <h3>Grafos</h3>
-                        <p>
-                            BFS, DFS, shortest path, árvores e técnicas clássicas.
-                        </p>
-                    </div>
-
-                    <div class="topic-card">
-                        <h3>Programação Dinâmica</h3>
-                        <p>
-                            Introdução à DP, memoization e problemas clássicos.
-                        </p>
-                    </div>
-
-                    <div class="topic-card">
-                        <h3>Matemática</h3>
-                        <p>
-                            Primos, modular, combinatória e teoria dos números.
-                        </p>
-                    </div>
-                </div>
+                <div class="topics" id="articlesContainer"></div>
             </div>
         </section>
     </main>
@@ -243,6 +69,7 @@
             CPPCore © 2026
         </div>
     </footer>
-
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/articles.js"></script>
 </body>
 </html>

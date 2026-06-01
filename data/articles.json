@@ -1,0 +1,75 @@
+[
+  {
+    "id": "stl-intro",
+    "title": "STL Essencial",
+    "category": "stl",
+    "tags": ["vector", "set", "map", "queue", "stack"],
+    "description": "Estruturas fundamentais da STL em C++ para competição.",
+    "url": "articles/stl/stl-basico.html"
+  },
+  {
+    "id": "sorting",
+    "title": "Ordenação (Sorting)",
+    "category": "sorting",
+    "tags": ["sort", "quick sort", "merge sort", "complexidade"],
+    "description": "Algoritmos de ordenação e uso do sort em C++.",
+    "url": "articles/fundamentos/sorting.html"
+  },
+  {
+    "id": "binary-search",
+    "title": "Busca Binária",
+    "category": "binary-search",
+    "tags": ["binary search", "lower_bound", "upper_bound"],
+    "description": "Busca eficiente em arrays ordenados e aplicações clássicas.",
+    "url": "articles/algoritmos/binary-search.html"
+  },
+  {
+    "id": "two-pointers",
+    "title": "Two Pointers",
+    "category": "two-pointers",
+    "tags": ["dois ponteiros", "sliding window"],
+    "description": "Técnica de ponteiros para otimização em arrays e strings.",
+    "url": "articles/algoritmos/two-pointers.html"
+  },
+  {
+    "id": "prefix-sum",
+    "title": "Prefix Sum",
+    "category": "prefix-sum",
+    "tags": ["soma prefixada", "range sum"],
+    "description": "Pré-processamento para consultas de soma em O(1).",
+    "url": "articles/algoritmos/prefix-sum.html"
+  },
+  {
+    "id": "graphs-basics",
+    "title": "BFS e DFS",
+    "category": "graphs",
+    "tags": ["grafes", "bfs", "dfs", "busca"],
+    "description": "Introdução a grafos e algoritmos de busca.",
+    "url": "articles/grafos/bfs-dfs.html"
+  },
+  
+  {
+    "id": "graphs-model",
+    "title": "Representação de Grafos",
+    "category": "graphs",
+    "tags": ["grafes", "dfs", "representção", "modelagem"],
+    "description": "Introdução a representação grafos e modelagem.",
+    "url": "articles/grafos/grafos-model.html"
+  },
+  {
+    "id": "dijkstra",
+    "title": "Dijkstra",
+    "category": "graphs",
+    "tags": ["shortest path", "heap", "priority queue"],
+    "description": "Menor caminho em grafos com pesos não negativos.",
+    "url": "articles/grafos/dijkstra.html"
+  },
+  {
+    "id": "bellman-ford",
+    "title": "Bellman-Ford",
+    "category": "graphs",
+    "tags": ["shortest path", "negative cycle"],
+    "description": "Menor caminho com detecção de ciclos negativos.",
+    "url": "articles/grafos/bellman-ford.html"
+  }
+]
